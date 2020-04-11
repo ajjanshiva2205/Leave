@@ -1,0 +1,119 @@
+    <!-- Bootstrap -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <title>Leave Management System</title>
+  </head>
+  <body>
+
+  <table align="center" border="0">
+      <tr>
+          <th>
+              {% include 'title.html' %}
+          </th>
+      </tr>
+      <tr>
+          <th>
+              {% include 'main_menu.html' %}
+          </th>
+      </tr>
+  </table>
+
+<table align="center" border="0">
+    <tr>
+        <th height="100">
+            <form action="{% url 'student_homepage' %}" method="post">
+                {% csrf_token %}
+            <table align="center" border="0" width="500">
+                <tr>
+                    <th><br><br><h2 style="font-family: 'Times New Roman'">Student Login</h2></th>
+                </tr>
+                    <tr>
+                        <th height="60"> <br>Roll Number:<br><input type="number" placeholder="Roll Number" name="l1" required> </th>
+                    </tr>
+                <tr>
+                        <th height="60"> Password:<br><input type="password" placeholder="password" name="l2" required> </th>
+                    </tr>
+                <tr>
+                    <th align="center" height="40">
+                        Designation:<br>
+                        <input type="text" placeholder="Designation" name="l3" required> Example: student
+                    </th>
+                </tr>
+                <tr>
+                    <th height="50">
+                        <button type="submit">Login</button>
+                    </th>
+                </tr>
+                <tr>
+                <th>
+                    {% for x in messages %}
+                        <h3 style="font-family: 'Times New Roman';color: darkblue" align="center">{{ x }}</h3>
+                    {% endfor %}
+                </th>
+                </tr>
+            </table>
+            </form>
+        </th>
+
+        <th>
+            <form action="{% url 'save_reg_details' %}" method="post">
+                {% csrf_token %}
+                <table align="center" border="0">
+                    <tr>
+                        <th width="200"> <br><br><h2 style="font-family: 'Times New Roman'" align="center">Sign Up</h2> </th>
+                    </tr>
+                    <tr>
+                        <th height="60"> <br>
+                            Roll Number/IDNO:<br><input type="number" placeholder="Roll Number/IDNO" name="r1" required>
+                        </th>
+
+                        <th height="60"> Name:<br>
+                            <input type="text" placeholder="Name" name="r2" required>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th height="60"> Email_id:<br>
+                            <input type="email" placeholder="Email_id" name="r3" required>
+                        </th>
+
+                        <th height="60"> Phone Number:<br>
+                            <input type="number" placeholder="Phone Number" name="r4" required>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th> Designation: <br>
+                            <input type="text" placeholder="Designation" name="r7" required>
+                        </th>
+                        <th> Department: <br>
+                            <input type="text" placeholder="Department" name="r6" required>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th height="60">Password:<br>
+                            <input type="password" placeholder="Password" name="r5" required>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th height="50">
+                            <button type="submit">Register</button>
+                        </th>
+                    </tr>
+                </table>
+            </form>
+        </th>
+    </tr>
+</table>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
+  </body>
+</html>
